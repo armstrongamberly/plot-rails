@@ -3,5 +3,8 @@ class PlotsController < ApplicationController
 	end
 
 	def create
+		@plot = Plot.new(params[:plot])
+  		@plot.save
+  		redirect_to @plot
 	end
 end

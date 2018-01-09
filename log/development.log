@@ -203,3 +203,47 @@ puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
 puma (3.11.0) lib/puma/server.rb:438:in `process_client'
 puma (3.11.0) lib/puma/server.rb:302:in `block in run'
 puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/plots/new" for 127.0.0.1 at 2018-01-09 17:55:15 -0500
+Processing by PlotsController#new as HTML
+  Rendering plots/new.html.erb within layouts/application
+  Rendered plots/new.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 1048ms (Views: 584.4ms)
+
+
+Started POST "/plots" for 127.0.0.1 at 2018-01-09 17:55:24 -0500
+Processing by PlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xzFm2Wo4vnfI5tPRldQhPve8bcs78OzaEECUFW8RRuqz7avtEK1V7TJeT5OfRD7NXjCo+LVbm+pmGYxtKyulbg==", "plot"=>{"name"=>"Iceland Ring Road", "address"=>"Iceland", "about"=>"honeymoon"}, "commit"=>"Save Plot"}
+No template found for PlotsController#create, rendering head :no_content
+Completed 204 No Content in 477ms
+
+
+Started POST "/plots" for 127.0.0.1 at 2018-01-09 17:56:33 -0500
+Processing by PlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xzFm2Wo4vnfI5tPRldQhPve8bcs78OzaEECUFW8RRuqz7avtEK1V7TJeT5OfRD7NXjCo+LVbm+pmGYxtKyulbg==", "plot"=>{"name"=>"Iceland Ring Road", "address"=>"Iceland", "about"=>"honeymoon"}, "commit"=>"Save Plot"}
+  Rendering text template
+  Rendered text template (0.3ms)
+Completed 200 OK in 17ms (Views: 14.5ms)
+
+
+Started POST "/plots" for 127.0.0.1 at 2018-01-09 17:57:22 -0500
+Processing by PlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xzFm2Wo4vnfI5tPRldQhPve8bcs78OzaEECUFW8RRuqz7avtEK1V7TJeT5OfRD7NXjCo+LVbm+pmGYxtKyulbg==", "plot"=>{"name"=>"Iceland Ring Road", "address"=>"Iceland", "about"=>"honeymoon"}, "commit"=>"Save Plot"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 1.7ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlots (20180109230935)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "plots" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "about" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180109230935"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-01-09 23:11:18.230143"], ["updated_at", "2018-01-09 23:11:18.230143"]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
