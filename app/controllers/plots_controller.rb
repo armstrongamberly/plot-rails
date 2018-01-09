@@ -3,8 +3,15 @@ class PlotsController < ApplicationController
 	end
 
 	def create
-		@plot = Plot.new(params[:plot])
+		@plot = Plot.new(article_params)
   		@plot.save
   		redirect_to @plot
 	end
+
+private
+
+	def article_params
+		params.require(:plot).permit(:title, :about)
+	end
+	
 end

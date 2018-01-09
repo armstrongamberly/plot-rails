@@ -247,3 +247,14 @@ Migrating to CreatePlots (20180109230935)
   [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-01-09 23:11:18.230143"], ["updated_at", "2018-01-09 23:11:18.230143"]]
   [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/plots" for 127.0.0.1 at 2018-01-09 18:15:42 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xzFm2Wo4vnfI5tPRldQhPve8bcs78OzaEECUFW8RRuqz7avtEK1V7TJeT5OfRD7NXjCo+LVbm+pmGYxtKyulbg==", "plot"=>{"name"=>"Iceland Ring Road", "address"=>"Iceland", "about"=>"honeymoon"}, "commit"=>"Save Plot"}
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/plots_controller.rb:6:in `create'
