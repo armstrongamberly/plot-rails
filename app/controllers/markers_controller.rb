@@ -1,4 +1,7 @@
 class MarkersController < ApplicationController
+
+	def show
+	end
 	
 	def new
 	end
