@@ -1,4 +1,5 @@
 class PlotsController < ApplicationController
+	
 	def new
 	end
 
@@ -13,5 +14,5 @@ private
 	def article_params
 		params.require(:plot).permit(:title, :about)
 	end
-	
+
 end
