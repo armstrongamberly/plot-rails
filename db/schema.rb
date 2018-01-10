@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109230935) do
+ActiveRecord::Schema.define(version: 20180110015411) do
+
+  create_table "markers", force: :cascade do |t|
+    t.text "name"
+    t.text "location"
+    t.text "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "plots", force: :cascade do |t|
     t.string "title"
