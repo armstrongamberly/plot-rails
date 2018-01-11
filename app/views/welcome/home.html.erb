@@ -1,0 +1,17 @@
+<h1>Welcome</h1>
+
+<% if current_user %>
+    <h1><%=current_user.email%></h1>
+<% else %>
+<%= form_for(:user, :url => session_path(:user)) do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %><br><br>
+  <%= f.label :passord %>
+  <%= f.password_field :password %><br>
+  <%= f.check_box :remember_me %>
+  <%= f.label :remember_me %><br>
+  <%= f.submit 'Sign in' %>
+  <%= link_to "Forgot your password?", new_password_path(:user) %>
+<% end %>
+    <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+<% end %>
