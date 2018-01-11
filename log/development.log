@@ -452,3 +452,12 @@ Migrating to DeviseCreateUsers (20180111005015)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-01-10 19:52:24 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/emesepalotas/.rvm/gems/ruby-2.3.3/gems/devise-4.4.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/emesepalotas/.rvm/gems/ruby-2.3.3/gems/devise-4.4.0/app/views/devise/shared/_links.html.erb (5.6ms)
+  Rendered /Users/emesepalotas/.rvm/gems/ruby-2.3.3/gems/devise-4.4.0/app/views/devise/sessions/new.html.erb within layouts/application (133.2ms)
+Completed 200 OK in 1068ms (Views: 964.8ms | ActiveRecord: 7.2ms)
+
+
